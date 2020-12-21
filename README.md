@@ -1,3 +1,10 @@
+How to deploy:
+1. Clone the repository
+2. `composer install` inside the project folder
+3. `composer update` inside the project folder
+4. Copy the `.env` file to the project folder
+5. Clone AdminLTE template inside the `public` folder with `git clone https://github.com/ColorlibHQ/AdminLTE.git`
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
