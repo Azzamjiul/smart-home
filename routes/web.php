@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SensorDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('sensordata', [SensorDataController::class, 'getAll']);
+Route::get('sensordata/{id}', [SensorDataController::class, 'get']);
+Route::post('sensordata', [SensorDataController::class, 'create']);
+Route::put('sensordata/{id}', [SensorDataController::class, 'update']);
+Route::delete('sensordata/{id}',[SensorDataController::class, 'delete']);
