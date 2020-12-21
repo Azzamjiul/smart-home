@@ -18,6 +18,6 @@ class DashboardController extends Controller
         } else {
             $status = 0;            // lampu mati
         }
-        return view('dashboard', compact($status));
+        return view('dashboard')->with('status', $status);
     }
 }
