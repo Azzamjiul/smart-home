@@ -12,7 +12,7 @@ active
             <!-- TABLE: LATEST ORDERS -->
             <div class="card col-12">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Lamp Status Data</h3>
+                <h3 class="card-title">Current Sensor Data</h3>
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -22,7 +22,7 @@ active
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                  <table id="lamp_status" class="table m-0">
+                  <table id="cursen_data" class="table m-0">
                     <thead>
                     <tr>
                       <th>ID</th>
@@ -61,7 +61,7 @@ active
 @section('additional-js')
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#lamp_status').DataTable();
+    $('#cursen_data').DataTable();
 } );
 </script>
 @endsection
