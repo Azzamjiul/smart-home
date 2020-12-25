@@ -32,6 +32,7 @@
           <li class="nav-item">
             <a href="{{route('current_sensor_data')}}" class="nav-link @yield('active-current-sensor')">
               <i class="nav-icon fas fa-bolt"></i>
+              <p>
                 Current Sensor Data
               </p>
             </a>
