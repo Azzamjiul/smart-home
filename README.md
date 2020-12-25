@@ -1,9 +1,13 @@
+This website is build with php7.3
 How to deploy:
 1. Clone the repository
-2. `composer install` inside the project folder
+2. `composer install` inside the project folder (make sure you already have composer installed).
 3. `composer update` inside the project folder
-4. Copy the `.env` file to the project folder
+4. Copy the `.env` file to the project folder and change as needed
 5. Clone AdminLTE template inside the `public` folder with `git clone https://github.com/ColorlibHQ/AdminLTE.git`
+6. Replace `public/AdminLTE/dist/js/pages/dashboard2.js` with `public/AdminLTEedited/dist/js/pages/dashboard2.js`.
+7. Do `php artisan migrate`
+8. Do `php artisan db:seed` to generate dummy data
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
