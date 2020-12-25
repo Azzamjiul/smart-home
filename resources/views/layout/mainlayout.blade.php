@@ -43,5 +43,5 @@
 
         @include('layout.partials.footer-scripts')
  </body>
-
+ @yield('additional-js')
 </html>

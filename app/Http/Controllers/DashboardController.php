@@ -5,10 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\SensorData;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
     public function index(){
+        $curtime = Carbon::now();
+        $status = $this->lamstat();
+
+        $lampdarr = $this->lampdata();
+
+        $datas = array_keys(get_defined_vars());
+        return view('dashboard', compact($datas));
+        // return view('dashboard')->with('status', $lamstatus);
+    }
+
+    public function lamstat()
+    {
         $pir_data = SensorData::where(['sensor_name'=>'PIR'])->latest()->first();
         $data_time = Carbon::parse($pir_data->created_at);
         $cur_time = Carbon::now();
@@ -18,6 +31,26 @@ class DashboardController extends Controller
         } else {
             $status = 0;            // lampu mati
         }
-        return view('dashboard')->with('status', $status);
+        // $datask = array_keys(get_defined_vars());
+        // return view('surat.create-penelitian', compact($datask));
+        // return view('dashboard')->with('status', $status);
+        return $status;
+    }
+
+    public function lampdata()
+    {
+        $sensordata = new SensorData();
+        $curhour = Carbon::now()->hour;
+        $lampdata = $sensordata->findPir()->whereDate('created_at', Carbon::today())->get(['value', 'created_at']);
+
+        $lampdarr = array();
+        for($i=0; $i<count($lampdata); $i++)
+        {
+            if($lampdata[$i]->created_at->hour == $curhour)
+            {
+                array_push($lampdarr, $lampdata[$i]->value);
+            }
+        }
+        return $lampdarr;
     }
 }

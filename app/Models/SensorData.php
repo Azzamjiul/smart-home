@@ -17,4 +17,8 @@ class SensorData extends Model
         'value',
         'created_at'
     ];
+    
+    public function findPir() {
+        return $datas = SensorData::where(['sensor_name'=>'PIR']);
+    }
 }
