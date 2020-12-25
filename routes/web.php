@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SensorDataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PirPageController;
+use App\Http\Controllers\CurrentSensorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +20,13 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/demo', function () {
+    return view('demo');
+});
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/pir_sensor_data', [PirPageController::class, 'index'])->name('lamp_data');
+Route::get('/current_sensor_data', [CurrentSensorController::class, 'index'])->name('current_sensor_data');
 
 Route::get('sensordata', [SensorDataController::class, 'getAll']);
 Route::get('sensordata/{id}', [SensorDataController::class, 'get']);

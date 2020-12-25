@@ -17,7 +17,6 @@ class DashboardController extends Controller
 
         $datas = array_keys(get_defined_vars());
         return view('dashboard', compact($datas));
-        // return view('dashboard')->with('status', $lamstatus);
     }
 
     public function lamstat()

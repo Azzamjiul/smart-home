@@ -35,7 +35,6 @@
                 </div><!--/. container-fluid -->
             </section>
             <!-- /.content -->
-            @yield('content')
         </div> <!-- /.content-wrapper -->
     </div> <!-- ./wrapper -->
 

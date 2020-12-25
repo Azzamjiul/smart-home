@@ -14,7 +14,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link @yield('active-menu')">
+            <a href="{{route('dashboard')}}" class="nav-link @yield('active-dashboard')">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -22,17 +22,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="{{route('lamp_data')}}" class="nav-link @yield('active-pir')">
+              <i class="nav-icon fas fa-lightbulb"></i>
               <p>
-                PIR Sensor Data
+                Lamp Status Data
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
+            <a href="{{route('current_sensor_data')}}" class="nav-link @yield('active-current-sensor')">
+              <i class="nav-icon fas fa-bolt"></i>
                 Current Sensor Data
               </p>
             </a>

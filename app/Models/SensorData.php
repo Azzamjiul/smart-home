@@ -21,4 +21,8 @@ class SensorData extends Model
     public function findPir() {
         return $datas = SensorData::where(['sensor_name'=>'PIR']);
     }
+    
+    public function findCurSen() {
+        return $datas = SensorData::where(['sensor_name'=>'Current_Sensor']);
+    }
 }
