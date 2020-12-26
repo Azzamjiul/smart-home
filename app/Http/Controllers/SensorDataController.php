@@ -30,7 +30,7 @@ class SensorDataController extends Controller
         $data->save();
 
         return response()->json([
-            "message" => "Book record created"
+            "message" => "Record created"
         ], 201);
     }
 

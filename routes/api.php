@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SensorDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('sensordata', [SensorDataController::class, 'getAll']);
+Route::get('sensordata/{id}', [SensorDataController::class, 'get']);
+Route::post('sensordata', [SensorDataController::class, 'create']);
+Route::put('sensordata/{id}', [SensorDataController::class, 'update']);
+Route::delete('sensordata/{id}',[SensorDataController::class, 'delete']);
