@@ -43,11 +43,15 @@ class DashboardController extends Controller
         $lampdata = $sensordata->findPir()->whereDate('created_at', Carbon::today())->get(['value', 'created_at']);
 
         $lampdarr = array();
+        for($i=0; $i<60; $i++)
+        {
+            array_push($lampdarr, 0.0);
+        }
         for($i=0; $i<count($lampdata); $i++)
         {
             if($lampdata[$i]->created_at->hour == $curhour)
             {
-                array_push($lampdarr, $lampdata[$i]->value);
+                $lampdarr[$lampdata[$i]->created_at->minute] = $lampdata[$i]->value;
             }
         }
         return $lampdarr;
