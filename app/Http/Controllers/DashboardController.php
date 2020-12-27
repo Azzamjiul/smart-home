@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use App\Models\SensorData;
 use Illuminate\Http\Request;
@@ -41,6 +41,26 @@ class DashboardController extends Controller
         $sensordata = new SensorData();
         $curhour = Carbon::now()->hour;
         $lampdata = $sensordata->findPir()->whereDate('created_at', Carbon::today())->get(['value', 'created_at']);
+
+        $lampdarr = array();
+        for($i=0; $i<60; $i++)
+        {
+            array_push($lampdarr, 0.0);
+        }
+        for($i=0; $i<count($lampdata); $i++)
+        {
+            if($lampdata[$i]->created_at->hour == $curhour)
+            {
+                $lampdarr[$lampdata[$i]->created_at->minute] = $lampdata[$i]->value;
+            }
+        }
+        return $lampdarr;
+    }
+    public function current_sensor()
+    {
+        $sensordata = new SensorData();
+        $curhour = Carbon::now()->hour;
+        $lampdata = $sensordata->findCurSen()->whereDate('created_at', Carbon::today())->get(['value', 'created_at']);
 
         $lampdarr = array();
         for($i=0; $i<60; $i++)

@@ -18,7 +18,8 @@ class sensor_data extends Seeder
         for($i = 0; $i < 5; $i++)
         {
             $data = new SensorData();
-            $data->sensor_name = "PIR";
+            //$data->sensor_name = "PIR";
+            $data->sensor_name = "Current_sensor";
             $data->value = rand(0, 1);
             $data->save();
         }

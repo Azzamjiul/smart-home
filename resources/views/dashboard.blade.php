@@ -63,6 +63,35 @@ Dashboard
                 <!-- /.row -->
               </div>
           </div>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Sensor Data</h5>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="text-center">
+                      <strong>Date: {{$curtime->format('d-M-Y')}} at {{$curtime->hour}} o'clock</strong>
+                    </p>
+
+                    <div class="chart">
+                      <!-- Sales Chart Canvas -->
+                      <canvas id="lampStatusChart" height="180" style="height: 180px;"></canvas>
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                </div>
+                <!-- /.row -->
+              </div>
+          </div>
           <!-- /.col -->
         </div>
         <!-- /.row -->
