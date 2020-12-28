@@ -100,5 +100,6 @@ Dashboard
 @section('additional-js')
 <script type="text/javascript">
 var lampdat = <?php echo json_encode($lampdarr); ?>;
+var sensdat = <?php echo json_encode($sensarr); ?>;
 </script>
 @endsection

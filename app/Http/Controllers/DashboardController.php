@@ -14,6 +14,7 @@ class DashboardController extends Controller
         $status = $this->lamstat();
 
         $lampdarr = $this->lampdata();
+        $sensarr = $this->current_sensor();
 
         $datas = array_keys(get_defined_vars());
         return view('dashboard', compact($datas));
@@ -71,7 +72,7 @@ class DashboardController extends Controller
         {
             if($cursen[$i]->created_at->hour == $curhour)
             {
-                $sensarr[$cursen[$i]->created_at->minute] = $lampdata[$i]->value;
+                $sensarr[$cursen[$i]->created_at->minute] = $cursen[$i]->value;
             }
         }
         return $sensarr;
