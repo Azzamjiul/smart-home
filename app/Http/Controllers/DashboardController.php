@@ -60,20 +60,20 @@ class DashboardController extends Controller
     {
         $sensordata = new SensorData();
         $curhour = Carbon::now()->hour;
-        $lampdata = $sensordata->findCurSen()->whereDate('created_at', Carbon::today())->get(['value', 'created_at']);
+        $cursen = $sensordata->findCurSen()->whereDate('created_at', Carbon::today())->get(['value', 'created_at']);
 
-        $lampdarr = array();
+        $sensarr = array();
         for($i=0; $i<60; $i++)
         {
-            array_push($lampdarr, 0.0);
+            array_push($sensarr, 0.0);
         }
-        for($i=0; $i<count($lampdata); $i++)
+        for($i=0; $i<count($cursen); $i++)
         {
-            if($lampdata[$i]->created_at->hour == $curhour)
+            if($cursen[$i]->created_at->hour == $curhour)
             {
-                $lampdarr[$lampdata[$i]->created_at->minute] = $lampdata[$i]->value;
+                $sensarr[$cursen[$i]->created_at->minute] = $lampdata[$i]->value;
             }
         }
-        return $lampdarr;
+        return $sensarr;
     }
 }
