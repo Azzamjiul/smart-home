@@ -84,7 +84,7 @@ Dashboard
 
                     <div class="chart">
                       <!-- Sales Chart Canvas -->
-                      <canvas id="lampStatusChart" height="180" style="height: 180px;"></canvas>
+                      <canvas id="sensorStatusChart" height="180" style="height: 180px;"></canvas>
                     </div>
                     <!-- /.chart-responsive -->
                   </div>

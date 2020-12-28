@@ -23,6 +23,6 @@ class SensorData extends Model
     }
     
     public function findCurSen() {
-        return $datas = SensorData::where(['sensor_name'=>'Current_Sensor']);
+        return $datas = SensorData::where(['sensor_name'=>'Amperage']);
     }
 }
