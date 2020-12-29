@@ -61,7 +61,9 @@ active
 @section('additional-js')
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#cursen_data').DataTable();
+    $('#cursen_data').DataTable({
+        "order":[[3, "desc"]]
+    });
 } );
 </script>
 @endsection

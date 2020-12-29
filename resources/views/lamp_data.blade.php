@@ -61,7 +61,9 @@ active
 @section('additional-js')
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#lamp_status').DataTable();
+    $('#lamp_status').DataTable({
+        "order":[[3, "desc"]]
+    });
 } );
 </script>
 @endsection
