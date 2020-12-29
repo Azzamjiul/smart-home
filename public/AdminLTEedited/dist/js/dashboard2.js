@@ -6,7 +6,7 @@ $(function () {
   var sensorChartCanvas = $('#sensorStatusChart').get(0).getContext('2d') //sensor
 
   var minutes = [];
-  for(var i = 1; i < 61; i++){
+  for(var i = 0; i < 60; i++){
     minutes.push(i); 
   }
 //lamp
