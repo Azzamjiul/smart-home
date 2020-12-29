@@ -66,7 +66,7 @@ Dashboard
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Sensor Data</h5>
+                <h5 class="card-title">Current Sensor</h5>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
