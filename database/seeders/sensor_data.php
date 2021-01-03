@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Models\SensorData;
+use Carbon\Carbon;
 
 class sensor_data extends Seeder
 {
@@ -15,13 +16,24 @@ class sensor_data extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 5; $i++)
+        $now = Carbon::now();
+        for($i = 0; $i < 60; $i++)
         {
             $data = new SensorData();
             //$data->sensor_name = "PIR";
             $data->sensor_name = "Amperage";
             $data->value = rand(0, 10);
+            $data->created_at = $now;
             $data->save();
+
+            $data = new SensorData();
+            $data->sensor_name = "PIR";
+            // $data->sensor_name = "Amperage";
+            $data->value = rand(0, 1);
+            $data->created_at = $now;
+            $data->save();
+
+            $now->addMinute();
         }
         // $data = new SensorData();
         // $data->sensor_name = Str::random(10);
