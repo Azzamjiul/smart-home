@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('active-menu')
+@section('active-dashboard')
 active
 @endsection
 
