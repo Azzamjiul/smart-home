@@ -1,6 +1,6 @@
 @extends('layout.mainlayout')
 
-@section('active--current-sensor')
+@section('active-current-sensor')
 active
 @endsection
 
